@@ -3,7 +3,7 @@
     angular.module('comics')
         .component('comicsbooksComponent', {
             templateUrl: 'components/pages/comicsbooks.html',
-            controller: ComicsbooksComtroller
+            controller: ComicsbooksController
         })
         var cbs = this;
         cbs.test =" Hello from books";
