@@ -1,5 +1,3 @@
-'use strict';
-
 (function(){angular.module('comics', ['ui.router', 'js-data'])})();
 
 

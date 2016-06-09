@@ -1,12 +1,11 @@
-(function(){
-    
-    angular.module('comics')
+
+angular.module('comics')
         .component('comicsbooksComponent', {
             templateUrl: 'components/pages/comicsbooks.html',
-            controller: ComicsbooksController
-        })
-        var cbs = this;
-        cbs.test =" Hello from books";
+            controller: function () {
 
-    
-}())
+            var cbs = this;
+            cbs.test =" Hello from books";
+
+            }
+})
