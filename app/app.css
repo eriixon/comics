@@ -3,5 +3,6 @@ body {
     opacity: 0.8;
 }
 .orbit-image{
-    height: 80%;
+    height: 100%;
+    z-index: -100;
 }
