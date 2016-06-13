@@ -1,22 +1,7 @@
-.header {
-    background-color: black;
-    color: white;
-}
-.footer {
-    background-color: black;
-    color: white;
-    position:fixed;
-    left:0px;
-    bottom:0px;
-    width:100%;
-    text-align: center;
-}
-#footer p{
-    padding-top: 1%;
-}
 body {
-    background-color: yellow;
+    background-color: black;
+    opacity: 0.8;
 }
-#logo {
-    height: 15%;
+.orbit-image{
+    height: 80%;
 }
