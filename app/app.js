@@ -3,7 +3,11 @@
 
 angular.module('comics').config(function($stateProvider){
             
-        $stateProvider  
+        $stateProvider
+                .state('home',{
+                    url: "/home",
+                    templateUrl: "<home-component></home-component>"
+                })
                 .state('books', {
                     url: '/books',
                     template: '<books-component></books-component>'

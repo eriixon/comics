@@ -1,11 +1,9 @@
 .header {
     background-color: black;
     color: white;
-    margin-top: 1%;
 }
 .footer {
     background-color: black;
-    height: 10%;
     color: white;
     position:fixed;
     left:0px;
@@ -20,5 +18,5 @@ body {
     background-color: yellow;
 }
 #logo {
-    height: 10%;
+    height: 15%;
 }
