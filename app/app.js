@@ -6,27 +6,27 @@ angular.module('comics').config(function($stateProvider){
         $stateProvider  
                 .state('books', {
                     url: '/books',
-                    template: '<comicsbooks-component></comicsbooks-component>'
+                    template: '<books-component></books-component>'
                 })
                 .state('book', {
                     url: '/book',
-                    template: '<comicsbook-component></comicsbook-component>'
+                    template: '<book-component></book-component>'
                 })
                 .state('movies', {
                     url: '/movies',
-                    template: '<comicsbooks-component></comicsbooks-component>'
+                    template: '<movies-component></movies-component>'
                 })
-                .state('movies', {
+                .state('movie', {
                     url: '/movie',
-                    template: '<comicsbook-component></comicsbook-component>'
+                    template: '<movie-component></movie-component>'
                 })
                 .state('heroes', {
                     url: '/heroes',
-                    template: '<comicsbooks-component></comicsbooks-component>'
+                    template: '<heroes-component></heroes-component>'
                 })
                 .state('hero', {
                     url: '/hero',
-                    template: '<comicsbook-component></comicsbook-component>'
+                    template: '<hero-component></hero-component>'
                 })
 });
 
