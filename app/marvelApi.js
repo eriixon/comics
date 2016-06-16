@@ -3,14 +3,16 @@
 
 	angular.module('comics').factory('MarvelApi', ['$q', '$http', function ($q, $http) {
 
-		var urlBase = 'http://gateway.marvel.com';
-		var comicsUrl = '/v1/public/comics?format=comic&apikey=fdd93787da3c53e3ff3f0b877d8df680'
+		var urlBase = "http://gateway.marvel.com:80/v1/public";
+		var comicsUrl = '/v1/public/comics?format=comic&apikey=479270933a18d0a5dbc60c4def569d731e92dac1';
+		var MarvelUrl = "http://marvel.com/?url=";
 
 		function getBooks() {
 			var deferred = $q.defer();			
-			$http.get('http://gateway.marvel.com:80/v1/public/comics?format=comic&apikey=fdd93787da3c53e3ff3f0b877d8df680').then(function (resp) {
+			$http.get(MarvelUrl+urlBase+comicsUrl).then(function (resp) {
 				if (resp.status === 200) {
 					deferred.resolve(resp.data);
+					debugger
 				}
 				else {
 					deferred.reject(resp.statusText);
