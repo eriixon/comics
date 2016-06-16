@@ -39,15 +39,16 @@
 		bks.books = [];
 
 		function activate() {
-            bks.getData = function(direction){
-                vm.currentPage += direction
+            bks.getData = function(){
+				MarvelApi.ge
+
                 starWarsApi.getPeople(vm.currentPage).then(function(data){
                     vm.people = data.results;
                     vm.next = data.next;
                     vm.prev = data.previous;
                 });
             };
-            vm.getData(1);
+            vm.getData();
 		}	
 
 	}	

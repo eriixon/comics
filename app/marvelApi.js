@@ -34,7 +34,7 @@
 		// }
 
 		return {
-			getPeople: getPeople
+			getBooks: getBooks
 			// getPerson: getPerson
 		};
 	}]);
