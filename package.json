@@ -3,21 +3,21 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
-  "devDependencies": {
-    "express": "^4.13.4"
+  "dependencies": {
+    "express": "^4.13.4",
+    "npm": "^3.9.5"
   },
   "scripts": {
     "start": "node index.js"
+  },
+  "engines": {
+    "node": "^4.13.4"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sergeyradkov/comics.git"
   },
-  "author": "",
+  "author": "Eriixon",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sergeyradkov/comics/issues"
-  },
   "homepage": "https://github.com/sergeyradkov/comics#readme"
 }
