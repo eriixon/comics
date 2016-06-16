@@ -40,15 +40,12 @@
 
 		function activate() {
             bks.getData = function(){
-				MarvelApi.ge
-
-                starWarsApi.getPeople(vm.currentPage).then(function(data){
-                    vm.people = data.results;
-                    vm.next = data.next;
-                    vm.prev = data.previous;
-                });
+				MarvelApi.getBooks().then(function(data){
+					bks.books = data.results;
+					console.log(bks.books)
+				});
             };
-            vm.getData();
+            bks.getData();
 		}	
 
 	}	
