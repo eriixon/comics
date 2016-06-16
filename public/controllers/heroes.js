@@ -1,6 +1,6 @@
 angular.module('comics')
         .component('heroesComponent', {
-        templateUrl: 'components/pages/heroes.html',
+        templateUrl: 'pages/heroes.html',
         controller: function () {
 
         var hrs = this;
@@ -11,7 +11,7 @@ angular.module('comics')
 
 angular.module('comics')
         .component('heroComponent', {
-        templateUrl: 'components/pages/hero.html',
+        templateUrl: 'pages/hero.html',
         controller: function () {
 
         var hr = this;

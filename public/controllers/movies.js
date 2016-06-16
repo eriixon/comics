@@ -1,6 +1,6 @@
 angular.module('comics')
         .component('moviesComponent', {
-        templateUrl: 'components/pages/movies.html',
+        templateUrl: '/pages/movies.html',
         controller: function () {
 
         var mvs = this;
@@ -11,7 +11,7 @@ angular.module('comics')
 
 angular.module('comics')
         .component('movieComponent', {
-        templateUrl: 'components/pages/movie.html',
+        templateUrl: 'pages/movie.html',
         controller: function () {
 
         var mv = this;

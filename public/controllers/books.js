@@ -26,7 +26,7 @@
 
 	angular.module('comics')
 	.component('booksComponent', {
-		templateUrl: 'components/pages/books.html',
+		templateUrl: 'pages/books.html',
 		controller: BooksController
 	});
 	debugger

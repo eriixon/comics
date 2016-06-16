@@ -1,6 +1,6 @@
 angular.module('comics')
         .component('homeComponent', {
-        templateUrl: 'components/pages/home.html',
+        templateUrl: 'pages/home.html',
         controller: function () {
 
         var vm = this;
