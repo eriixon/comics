@@ -1,8 +1,7 @@
 (function () {
 	'use strict';
-
-	angular.module('comics')
-	.factory('MarvelApi', ['$q', '$http', function ($q, $http) {
+	
+	angular.module('comics').factory('MarvelApi', ['$q', '$http', function ($q, $http) {
 
 		var urlBase = 'http://gateway.marvel.com';
 
