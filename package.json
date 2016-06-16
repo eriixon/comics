@@ -1,0 +1,23 @@
+{
+  "name": "comics",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "express": "^4.13.4"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergeyradkov/comics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sergeyradkov/comics/issues"
+  },
+  "homepage": "https://github.com/sergeyradkov/comics#readme"
+}
