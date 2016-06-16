@@ -24,8 +24,7 @@
 (function () {
 	'use strict';
 
-	angular.module('comics')
-	.component('booksComponent', {
+	angular.module('comics').component('booksComponent', {
 		templateUrl: 'pages/books.html',
 		controller: function (MarvelApi) {
 		
@@ -41,4 +40,4 @@
 
         bks.getData();
 	}	
-})();
+})})();

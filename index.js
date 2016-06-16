@@ -18,12 +18,12 @@ var urlBase = "http://gateway.marvel.com:80/v1/public",
 
 server.get('/books', function(req, res){
 
-    marvel.comics.findAll(3, 30)
+    var books = marvel.comics.findAll()
     .then(console.log)
     .fail(console.error)
     .done();
 
-    res.send(comics);
+    res.send(books);
 })
 
 
