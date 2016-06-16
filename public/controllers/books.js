@@ -27,26 +27,18 @@
 	angular.module('comics')
 	.component('booksComponent', {
 		templateUrl: 'pages/books.html',
-		controller: BooksController
-	});
-	debugger
-	BooksController.$inject = ['MarvelApi'];	//FOR MINIFICATION
-
-	function BooksController(MarvelApi) {
+		controller: function (MarvelApi) {
 		
 		var bks = this;
-		bks.$onInit = activate;
 		bks.books = [];
 
-		function activate() {
-            bks.getData = function(){
-				MarvelApi.getBooks().then(function(data){
-					bks.books = data.results;
-					console.log(bks.books)
-				});
-            };
-            bks.getData();
-		}	
+		bks.getData = function(){
+			MarvelApi.getBooks().then(function(data){
+				bks.books = data.results;
+				debugger
+			});
+        };
 
+        bks.getData();
 	}	
 })();

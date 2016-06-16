@@ -7,9 +7,8 @@ angular.module('comics')
         mvs.test =" Hello from Movies";
 
         }
-});
+        })
 
-angular.module('comics')
         .component('movieComponent', {
         templateUrl: 'pages/movie.html',
         controller: function () {
