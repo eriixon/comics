@@ -32,8 +32,8 @@
 		bks.books = [];
 
 		bks.getData = function(){
-			MarvelApi.getBooks().then(function(data){
-				bks.books = data.results;
+			MarvelApi.getBooks().then(function(res){
+				bks.books = res.data.books.data;
 				console.log(bks.books);
 				debugger
 			});
