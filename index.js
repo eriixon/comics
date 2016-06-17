@@ -20,7 +20,7 @@ var urlBase = "http://gateway.marvel.com:80/v1/public",
 server.get('/books', function(req, res){
 
     marvel.comics.findAll(100,100)
-        .then(books => res.send({books:books}))
+        .then(books => {res.send({books:books}), console.log(books)})
         .fail(console.error)
         .done();
 })
