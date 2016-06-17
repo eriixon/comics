@@ -3,12 +3,13 @@ var express = require('express'),
     port = process.env.PORT || 8080,
     server = express();
     api = require('marvel-api');
+    config = require('./config.json')
 
 server.use(express.static(__dirname + '/public'));
 
 var marvel = api.createClient({
-    publicKey: 'fdd93787da3c53e3ff3f0b877d8df680',
-    privateKey: '479270933a18d0a5dbc60c4def569d731e92dac1'
+    publicKey: config.publicKey,
+    privateKey: config.privateKey
 });
 
 var urlBase = "http://gateway.marvel.com:80/v1/public",
@@ -19,11 +20,14 @@ var urlBase = "http://gateway.marvel.com:80/v1/public",
 server.get('/books', function(req, res){
 
     marvel.comics.findAll()
-    .then(console.log)
+    .then(function(a,b){
+        console.log(a,b)
+        res.send({a:a, b:b})
+    })
     .fail(console.error)
     .done();
 
-    res.send(books);
+    // res.send(books);
 })
 
 
