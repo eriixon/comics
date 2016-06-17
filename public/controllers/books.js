@@ -34,6 +34,7 @@
 		bks.getData = function(){
 			MarvelApi.getBooks().then(function(data){
 				bks.books = data.results;
+				console.log(bks.books);
 				debugger
 			});
         };

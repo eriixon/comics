@@ -13,15 +13,15 @@ var marvel = api.createClient({
 });
 
 var urlBase = "http://gateway.marvel.com:80/v1/public",
-	comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=479270933a18d0a5dbc60c4def569d731e92dac1",
+	comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1",
 	movieUrl = "";
 	heroesUrl = "";
 
 server.get('/books', function(req, res){
 
     marvel.comics.findAll()
-    .then(function(data){
-        console.log(data)
+    .then(function(a, b){
+        // console.log(data)
         res.send({data:data})
     })
     .fail(console.error)
