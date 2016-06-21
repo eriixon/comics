@@ -18,11 +18,17 @@ var urlBase = "http://gateway.marvel.com:80/v1/public",
 	heroesUrl = "";
 
 server.get('/books', function(req, res){
-
     marvel.comics.findAll(100,100)
         .then(books => {res.send({books:books}), console.log(books)})
         .fail(console.error)
         .done();
+})
+
+server.get('/heroes', function(req, res){
+    marvel.characters.findAll(100)
+       .then(heroes => {res.send({heroes:heroes}), console.log(heroes)})
+       .fail(console.error)
+       .done();
 })
 
 
