@@ -1,16 +1,15 @@
 angular.module('comics')
         .component('heroesComponent', {
                 templateUrl: 'pages/heroes.html',
-                controller: function () {
+                controller: function (MarvelApi) {
 
                 var hrs = this;
                 hrs.heroes = [];
 
                 hrs.getData = function () {
+                        debugger
                         MarvelApi.getHeroes().then(function (res) {
                         hrs.heroes = res.data.heroes.data;
-                        console.log(hrs.heroes);
-                        debugger
                         });
                 };
 
