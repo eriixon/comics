@@ -16,14 +16,6 @@ angular.module('comics').config(function($stateProvider){
                     url: '/book',
                     template: '<book-component></book-component>'
                 })
-                .state('movies', {
-                    url: '/movies',
-                    template: '<movies-component></movies-component>'
-                })
-                .state('movie', {
-                    url: '/movie',
-                    template: '<movie-component></movie-component>'
-                })
                 .state('heroes', {
                     url: '/heroes',
                     template: '<heroes-component></heroes-component>'

@@ -1,9 +1,9 @@
 var express = require('express'),
     http = require('http'),
     port = process.env.PORT || 8080,
-    server = express();
-    api = require('marvel-api');
-    config = require('./config.json')
+    server = express(),
+    api = require('marvel-api'),
+    config = require('./config.json');
 
 server.use(express.static(__dirname + '/public'));
 
