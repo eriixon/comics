@@ -3,9 +3,20 @@ var express = require('express'),
     port = process.env.PORT || 8080,
     server = express(),
     api = require('marvel-api'),
-    config = require('./config.json');
+    config = require('./config.json'),
+    JSData = require('js-data'),
+    DSNedbAdapter = require('js-data-nedb');
 
 server.use(express.static(__dirname + '/public'));
+
+var store = new JSData.DS();
+var adapter = new DSNedbAdapter();
+store.registerAdapter('nedb', adapter, { default: true });
+
+var Heroes = store.defineResource({
+  name: 'hero',
+  filepath: __dirname + '/data/heroes.db'
+})
 
 var marvel = api.createClient({
     publicKey: config.publicKey,
