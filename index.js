@@ -18,9 +18,12 @@ var Heroes = store.defineResource({
   filepath: __dirname + '/data/heroes.db'
 })
 
+var pubKey = config.get('Api.publicKey'), 
+    prKey = config.get('privateKey');
+
 var marvel = api.createClient({
-    publicKey: config.publicKey,
-    privateKey: config.privateKey
+    publicKey: pubKey,
+    privateKey: prKey
 });
 
 var urlBase = "http://gateway.marvel.com:80/v1/public",
