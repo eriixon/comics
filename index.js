@@ -3,7 +3,7 @@ var express = require('express'),
     port = process.env.PORT || 8080,
     server = express(),
     api = require('marvel-api'),
-    config = require('./config.json'),
+    config = require('config'),
     JSData = require('js-data'),
     DSNedbAdapter = require('js-data-nedb');
 
