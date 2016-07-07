@@ -6,10 +6,10 @@ angular.module('comics')
                 var hrs = this;
                 hrs.heroes = [];
 
+
                 hrs.getData = function () {
-                        debugger
                         MarvelApi.getHeroes().then(function (res) {
-                        hrs.heroes = res.data.heroes.data;
+                        hrs.heroes = res.data.heroes;
                         });
                 };
 

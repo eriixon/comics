@@ -7,6 +7,7 @@ angular.module('comics').service('MarvelApi', ['$q', '$http', function ($q, $htt
 			return $http.get('/books', books)
 		}
 		this.getHeroes = function (heroes) {
+			debugger
 			return $http.get('/heroes', heroes)
 		}
 		

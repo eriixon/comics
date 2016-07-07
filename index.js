@@ -12,13 +12,14 @@ server.use(express.static(__dirname + '/public'));
 var store = new JSData.DS();
 var adapter = new DSNedbAdapter();
 store.registerAdapter('nedb', adapter, { default: true });
+var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
 
 var Heroes = store.defineResource({
   name: 'hero',
   filepath: __dirname + '/data/heroes.db'
 })
 
-var pubKey = config.get('Api.publicKey'), 
+var pubKey = config.get('publicKey'), 
     prKey = config.get('privateKey');
 
 var marvel = api.createClient({
@@ -27,8 +28,8 @@ var marvel = api.createClient({
 });
 
 var urlBase = "http://gateway.marvel.com:80/v1/public",
-	comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1",
-	movieUrl = "";
+	// comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1",
+	// movieUrl = "";
 	heroesUrl = "characters?nameStartsWith=cap&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1";
 
 server.get('/books', function(req, res){
@@ -37,18 +38,19 @@ server.get('/books', function(req, res){
         .fail(console.error)
         .done();
 })
-
+var z = [];
 server.get('/heroes', function(req, res){
-    marvel.characters.findByName('thor')
-    .then(heroes => {res.send({heroes:heroes}), console.log(heroes)})
+
+    marvel.characters.findByName("thor")
+    .then(heroes => {
+        z = heroes.data[0],
+        res.send({heroes:heroes.data})
+    })
     .fail(console.error)
     .done();
-    // marvel.characters.findAll(100)
-    //    .then(heroes => {res.send({heroes:heroes}), console.log(heroes)})
-    //    .fail(console.error)
-    //    .done();
-})
 
+    console.log(z.id)
+})
 
 server.listen(port, function(){
     console.log("Server is running on port " + port);
