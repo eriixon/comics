@@ -12,7 +12,7 @@ server.use(express.static(__dirname + '/public'));
 var store = new JSData.DS();
 var adapter = new DSNedbAdapter();
 store.registerAdapter('nedb', adapter, { default: true });
-var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
+
 
 var Heroes = store.defineResource({
   name: 'hero',
@@ -38,19 +38,21 @@ server.get('/books', function(req, res){
         .fail(console.error)
         .done();
 })
-var z = [];
+
+var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
+
 server.get('/heroes', function(req, res){
-
-    marvel.characters.findByName("thor")
-    .then(heroes => {
-        z = heroes.data[0],
-        res.send({heroes:heroes.data})
-    })
-    .fail(console.error)
-    .done();
-
-    console.log(z.id)
+    getHero(req.query.hero, function(hero){
+    res.send(hero)
+    });
 })
+
+function getHero (hero, cb) {
+    marvel.characters.findByName(hero)
+        .then(res => {return cb(res.data)})
+        .fail(console.error)
+        .done();
+}
 
 server.listen(port, function(){
     console.log("Server is running on port " + port);
