@@ -3,21 +3,13 @@ var express = require('express'),
     port = process.env.PORT || 8080,
     server = express(),
     api = require('marvel-api'),
-    config = require('config'),
-    JSData = require('js-data'),
-    DSNedbAdapter = require('js-data-nedb');
+    firebase = require("firebase"),
+    config = require('config');
+
 
 server.use(express.static(__dirname + '/public'));
 
-var store = new JSData.DS();
-var adapter = new DSNedbAdapter();
-store.registerAdapter('nedb', adapter, { default: true });
 
-
-var Heroes = store.defineResource({
-  name: 'hero',
-  filepath: __dirname + '/data/heroes.db'
-})
 
 var pubKey = config.get('publicKey'), 
     prKey = config.get('privateKey');
