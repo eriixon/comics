@@ -6,7 +6,7 @@ angular.module('comics')
                 var hrs = this;
                 hrs.heroes = [];
 
-                var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
+                var heroesList = ["Ant-Man", "Thor", "Iron Man", "Wasp", "Hulk"];
                 hrs.getData = function () {
                 for(var i=0; i<heroesList.length; i++){
                         MarvelApi.getHeroes(heroesList[i]).then(function (res) {

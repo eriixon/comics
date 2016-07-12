@@ -9,6 +9,17 @@ var express = require('express'),
 
 server.use(express.static(__dirname + '/public'));
 
+firebase.initializeApp({
+  serviceAccount: "config/ave_fb.json",
+  databaseURL: "https://avengers-e29ec.firebaseio.com/"
+});
+
+var db = firebase.database();
+var characters = db.ref("characters");
+var founders = characters.child("founders");
+
+
+
 
 
 var pubKey = config.get('publicKey'), 
@@ -35,7 +46,21 @@ var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
 
 server.get('/heroes', function(req, res){
     getHero(req.query.hero, function(hero){
-    res.send(hero)
+    res.send(hero);
+
+    founders.push().set({
+        id: hero[0].id,
+        name: hero[0].name,
+        description: hero[0].description,
+        img: hero[0].thumbnail.path + "." + hero[0].thumbnail.extension,
+        comics: hero[0].comics.available,
+        series: hero[0].series.available,
+        stories: hero[0].stories.available,
+        events: hero[0].events.available,
+        detail: hero[0].urls[0].url,
+        wiki: hero[0].urls[1].url,
+        comiclink: hero[0].urls[2].url
+        });
     });
 })
 
