@@ -11,8 +11,12 @@ server.use(express.static(__dirname + '/public'));
 
 firebase.initializeApp({
   serviceAccount: "config/ave_fb.json",
-  databaseURL: "https://avengers-e29ec.firebaseio.com/"
+  databaseURL: "https://avengers-e29ec.firebaseio.com/",
+  storageBucket: "avengers-e29ec.appspot.com"
 });
+
+// var imgRef = firebase.storage().ref('heroes/hulk.jpg')
+// console.log(imgRef);
 
 var db = firebase.database();
 var characters = db.ref("characters");

@@ -18,7 +18,7 @@ angular.module('comics')
                 // };
                 hrs.getData = function(){
                         MarvelApi.getHeroes().then(function (res) {
-                        hrs.heroes = res.data;
+                        hrs.heroes = res.data.founders;
                         debugger
                         })
                 };        

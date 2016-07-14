@@ -5,11 +5,14 @@ body {
 }
 .orbit-image{
     max-height: 90%;
-
     z-index: -100;
 }
 
 .top-bar {
     background-color: transparent;
-
 }
+.img-hero {
+    height: 200px;
+    width: 200px;
+}
+/*}gs://avengers-e29ec.appspot.com/heroes/hulk.jpg*/
