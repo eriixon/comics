@@ -45,7 +45,7 @@ server.get('/books', function(req, res){
 })
 
 server.get('/fbheroes', function (req, res){
-    founders.on("value", 
+    characters.on("value", 
         function(snapshot) { res.send (snapshot.val())}, 
         function (errorObject) {console.log("The read failed: " + errorObject.code);}
     );
