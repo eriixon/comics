@@ -6,16 +6,22 @@ angular.module('comics')
                 var hrs = this;
                 hrs.heroes = [];
 
-                var heroesList = ["Ant-Man", "Thor", "Iron Man", "Wasp", "Hulk"];
+        var heroesList = ["Jack of Hearts"];
+
                 hrs.getData = function () {
-                for(var i=0; i<heroesList.length; i++){
+                for(var i=0; i < heroesList.length; i++){
                         MarvelApi.getHeroes(heroesList[i]).then(function (res) {
                         hrs.heroes.push(res.data);
                         debugger
                         });
                 };
                 };
-
+                // hrs.getData = function(){
+                //         MarvelApi.getHeroes().then(function (res) {
+                //         hrs.heroes = res.data;
+                //         debugger
+                //         })
+                // };        
                 hrs.getData();
 
                 }

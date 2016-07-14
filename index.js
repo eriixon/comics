@@ -17,9 +17,11 @@ firebase.initializeApp({
 var db = firebase.database();
 var characters = db.ref("characters");
 var founders = characters.child("founders");
-
-
-
+var oldteam = characters.child("oldteam");
+var wcrec = characters.child("wcrecruits");
+var pirecs = characters.child("pirecruits ");
+var unchrecs = characters.child("UNrecruits");
+var retrecs = characters.child("returnRecruits");
 
 
 var pubKey = config.get('publicKey'), 
@@ -42,25 +44,89 @@ server.get('/books', function(req, res){
         .done();
 })
 
-var heroesList = ["Thor", "Iron Man", "Ant-Man", "Wasp", "Hulk"];
+server.get('/fbheroes', function (req, res){
+    founders.on("value", 
+        function(snapshot) { res.send (snapshot.val())}, 
+        function (errorObject) {console.log("The read failed: " + errorObject.code);}
+    );
+})
+
 
 server.get('/heroes', function(req, res){
-    getHero(req.query.hero, function(hero){
+    var hname = req.query.hero;
+    getHero(hname, function(hero){
     res.send(hero);
 
-    founders.push().set({
+    retrecs.child(hname).set({
+        id: "some",
+        name: hname,
+        realName: "some",
+        description: "some",
+        img: "some",
+        physical: {
+            height: "some",
+            weight: "some",
+            eyes: "some",
+            hair: "some"
+        },
+        powers: "some",
+        abilities: "some",
+        groupAffiliations: ["some", "some"],
+        powergrid: {
+            intelligence: 7,
+            strength: 7,
+            speed: 7,
+            durability: 7,
+            energy: 7,
+            fighting: 7
+        },
+        weapons: "some",
+        wiki: {
+            comics: "some",
+            series: "some",
+            stories: "some",
+            events: "some",
+            detail: "some",
+            wiki: "some",
+            comiclink: "some"
+        },
+        });/*
+
+   retrecs.child(hero[0].name).set({
         id: hero[0].id,
         name: hero[0].name,
+        realName: "some",
         description: hero[0].description,
         img: hero[0].thumbnail.path + "." + hero[0].thumbnail.extension,
-        comics: hero[0].comics.available,
-        series: hero[0].series.available,
-        stories: hero[0].stories.available,
-        events: hero[0].events.available,
-        detail: hero[0].urls[0].url,
-        wiki: hero[0].urls[1].url,
-        comiclink: hero[0].urls[2].url
-        });
+        physical: {
+            height: "some",
+            weight: "some",
+            eyes: "some",
+            hair: "some"
+        },
+        powers: "some",
+        abilities: "some",
+        groupAffiliations: "some",
+        powergrid: {
+            intelligence: 10,
+            strength: 10,
+            speed: 10,
+            durability: 10,
+            energy: 10,
+            fighting: 10
+        },
+        weapons: "some",
+        wiki: {
+            comics: hero[0].comics.available,
+            series: hero[0].series.available,
+            stories: hero[0].stories.available,
+            events: hero[0].events.available,
+            detail: hero[0].urls[0].url,
+            wiki: hero[0].urls[1].url,
+            comiclink: hero[0].urls[2].url
+        },
+        });*/
+
     });
 })
 
