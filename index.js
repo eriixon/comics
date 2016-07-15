@@ -19,13 +19,16 @@ firebase.initializeApp({
 // console.log(imgRef);
 
 var db = firebase.database();
-var characters = db.ref("characters");
-var founders = characters.child("founders");
-var oldteam = characters.child("oldteam");
-var wcrec = characters.child("wcrecruits");
-var pirecs = characters.child("pirecruits ");
-var unchrecs = characters.child("UNrecruits");
-var retrecs = characters.child("returnRecruits");
+var avengers = db.ref("avengers");
+var xmen = db.ref("x-men");
+
+// var characters = db.ref("characters");
+// var founders = characters.child("founders");
+// var oldteam = characters.child("oldteam");
+// var wcrec = characters.child("wcrecruits");
+// var pirecs = characters.child("pirecruits ");
+// var unchrecs = characters.child("UNrecruits");
+// var retrecs = characters.child("returnRecruits");
 
 
 var pubKey = config.get('publicKey'), 
@@ -38,7 +41,6 @@ var marvel = api.createClient({
 
 var urlBase = "http://gateway.marvel.com:80/v1/public",
 	// comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1",
-	// movieUrl = "";
 	heroesUrl = "characters?nameStartsWith=cap&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1";
 
 server.get('/books', function(req, res){
@@ -49,7 +51,7 @@ server.get('/books', function(req, res){
 })
 
 server.get('/fbheroes', function (req, res){
-    characters.on("value", 
+    avengers.on("value", 
         function(snapshot) { res.send (snapshot.val())}, 
         function (errorObject) {console.log("The read failed: " + errorObject.code);}
     );
@@ -61,7 +63,7 @@ server.get('/heroes', function(req, res){
     getHero(hname, function(hero){
     res.send(hero);
 
-    retrecs.child(hname).set({
+    /*retrecs.child(hname).set({
         id: "some",
         name: hname,
         realName: "some",
@@ -94,9 +96,9 @@ server.get('/heroes', function(req, res){
             wiki: "some",
             comiclink: "some"
         },
-        });/*
+        });*/
 
-   retrecs.child(hero[0].name).set({
+   xmen.child(hero[0].name).set({
         id: hero[0].id,
         name: hero[0].name,
         realName: "some",
@@ -129,7 +131,7 @@ server.get('/heroes', function(req, res){
             wiki: hero[0].urls[1].url,
             comiclink: hero[0].urls[2].url
         },
-        });*/
+        });
 
     });
 })

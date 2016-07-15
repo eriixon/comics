@@ -12,7 +12,12 @@ body {
     background-color: transparent;
 }
 .img-hero {
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width:  400px;
+    
 }
-/*}gs://avengers-e29ec.appspot.com/heroes/hulk.jpg*/
+/*.hero-card {
+    height: 800px;
+    width:  400px;
+    display: inline-block;
+}*/

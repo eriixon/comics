@@ -6,8 +6,8 @@ angular.module('comics')
                 var hrs = this;
                 hrs.heroes = [];
 
-                // var heroesList = ["Jack of Hearts"];
-
+// var heroesList = ["Black Panther", "Black Widow", "Captain America","Captain Marvel","Falcon", "Hank Pym", "Hawkeye", "Hulk", "Iron Man", "Luke Cage","Quicksilver","Scarlet Witch", "Spider-Woman", "Thor","Vision","Wasp","Wonder Man"];
+// var heroesList = ["Angel", "Beast", "Colossus", "Cyclops", "Emma Frost", "Gambit", "Iceman","Jean Grey","Jubilee","Kitty Pryde","Magik","Nightcrawler","Northstar","Psylocke","Rogue","Storm","Wolverine"];
                 // hrs.getData = function () {
                 //         for(var i=0; i < heroesList.length; i++){
                 //                 MarvelApi.getHeroes(heroesList[i]).then(function (res) {
@@ -17,8 +17,9 @@ angular.module('comics')
                 //         };
                 // };
                 hrs.getData = function(){
+                        debugger
                         MarvelApi.getHeroes().then(function (res) {
-                        hrs.heroes = res.data.founders;
+                        hrs.heroes = res.data;
                         debugger
                         })
                 };        
