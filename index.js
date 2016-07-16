@@ -19,6 +19,7 @@ firebase.initializeApp({
 // console.log(imgRef);
 
 var db = firebase.database();
+var all = db.ref();
 var avengers = db.ref("avengers");
 var xmen = db.ref("x-men");
 
@@ -51,7 +52,7 @@ server.get('/books', function(req, res){
 })
 
 server.get('/fbheroes', function (req, res){
-    db.on("value", 
+    all.on("value", 
         function(snapshot) { res.send (snapshot.val())}, 
         function (errorObject) {console.log("The read failed: " + errorObject.code);}
     );

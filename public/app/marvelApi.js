@@ -7,9 +7,9 @@ angular.module('comics').service('MarvelApi', ['$q', '$http', function ($q, $htt
 			return $http.get('/fbheroes')
 		}
 
-		// this.getHeroes = function (hero) {
-		// 	return $http.get('/heroes?hero=' + hero)
-		// }
+		this.createHeroes = function (hero) {
+			return $http.get('/heroes?hero=' + hero)
+		}
 		
 	}]);
 })();
