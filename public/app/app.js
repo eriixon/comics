@@ -8,22 +8,19 @@ angular.module('comics').config(function($stateProvider){
                     url: "",
                     template: "<home-component></home-component>"
                 })
-                .state('books', {
-                    url: '/books',
-                    template: '<books-component></books-component>'
+                .state('creater', {
+                    url: '/creater',
+                    template: '<creater-component></creater-component>'
                 })
-                .state('book', {
-                    url: '/book',
+                .state('xmen', {
+                    url: '/xmen',
                     template: '<book-component></book-component>'
                 })
-                .state('heroes', {
-                    url: '/heroes',
-                    template: '<heroes-component></heroes-component>'
+                .state('avengers', {
+                    url: '/avengers',
+                    template: '<avengers-component></avengers-component>'
                 })
-                .state('hero', {
-                    url: '/hero',
-                    template: '<hero-component></hero-component>'
-                })
+
 });
 
 
