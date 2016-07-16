@@ -4,7 +4,5 @@ angular.module('comics')
         controller: function () {
 
         var vm = this;
-        vm.test =" Hello from home";
-
         }
 });

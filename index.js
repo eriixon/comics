@@ -21,16 +21,7 @@ firebase.initializeApp({
 var db = firebase.database();
 var all = db.ref();
 var avengers = db.ref("avengers");
-var xmen = db.ref("x-men");
-
-// var characters = db.ref("characters");
-// var founders = characters.child("founders");
-// var oldteam = characters.child("oldteam");
-// var wcrec = characters.child("wcrecruits");
-// var pirecs = characters.child("pirecruits ");
-// var unchrecs = characters.child("UNrecruits");
-// var retrecs = characters.child("returnRecruits");
-
+var xmen = db.ref("xmen");
 
 var pubKey = config.get('publicKey'), 
     prKey = config.get('privateKey');
@@ -44,12 +35,6 @@ var urlBase = "http://gateway.marvel.com:80/v1/public",
 	// comicsUrl = "/comics?format=comic&formatType=comic&noVariants=false&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1",
 	heroesUrl = "characters?nameStartsWith=cap&apikey=fdd93787da3c53e3ff3f0b877d8df680=479270933a18d0a5dbc60c4def569d731e92dac1";
 
-server.get('/books', function(req, res){
-    marvel.comics.findAll(100,100)
-        .then(books => {res.send({books:books}), console.log(books)})
-        .fail(console.error)
-        .done();
-})
 
 server.get('/fbheroes', function (req, res){
     all.on("value", 

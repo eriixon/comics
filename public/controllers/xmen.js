@@ -9,7 +9,7 @@ angular.module('comics')
                 xm.getData = function(){
                     MarvelApi.getHeroes().then(function (res) {
                         debugger
-                    xm.heroes = res.data.x-men;
+                    xm.heroes = res.data.xmen;
                     debugger
                     })
                 };

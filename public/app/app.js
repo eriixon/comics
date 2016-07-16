@@ -1,4 +1,7 @@
-(function(){angular.module('comics', ['ui.router'])})();
+
+(function(){
+    
+    angular.module('comics', ['ui.router']);
 
 
 angular.module('comics').config(function($stateProvider){
@@ -22,6 +25,8 @@ angular.module('comics').config(function($stateProvider){
                 })
 
 });
+
+})();
 
 
 
