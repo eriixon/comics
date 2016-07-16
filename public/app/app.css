@@ -16,8 +16,12 @@ body {
     width:  400px;
     
 }
-/*.hero-card {
-    height: 800px;
-    width:  400px;
+.heroes-carusel {
+    position: relative;
+    
+}
+.hero-card {
+    width: 500px;
     display: inline-block;
-}*/
+    border: 1px solid antiquewhite;
+}
