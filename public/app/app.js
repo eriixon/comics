@@ -1,4 +1,4 @@
-(function(){angular.module('comics', ['ui.router', 'js-data'])})();
+(function(){angular.module('comics', ['ui.router'])})();
 
 
 angular.module('comics').config(function($stateProvider){
@@ -14,7 +14,7 @@ angular.module('comics').config(function($stateProvider){
                 })
                 .state('xmen', {
                     url: '/xmen',
-                    template: '<book-component></book-component>'
+                    template: '<xmen-component></xmen-component>'
                 })
                 .state('avengers', {
                     url: '/avengers',

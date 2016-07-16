@@ -3,12 +3,12 @@ angular.module('comics')
                 templateUrl: 'pages/xmen.html',
                 controller: function (MarvelApi) {
 
-                var hrs = this;
+                var xm = this;
                 xm.heroes = [];
 
                 xm.getData = function(){
                     MarvelApi.getHeroes().then(function (res) {
-                    hrs.heroes = res.data;
+                    xm.heroes = res.data.xmen;
                     debugger
                     })
                 };

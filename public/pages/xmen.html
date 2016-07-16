@@ -1,13 +1,14 @@
-<div class="row">
-    <div class="media-object" ng-repeat="book in $ctrl.books ">
-        <div class="media-object-section">
+<div class="row small-up-1 medium-up-2 large-up-3">
+    <div class="column hero-card" ng-repeat="hero in $ctrl.heroes">
+        <div class="aa">
             <div class="thumbnail">
-                <img ng-src="{{book.thumbnail.path}}.{{book.thumbnail.extension}}">
+                <img class="img-hero" ng-src={{hero.img}}>
             </div>
         </div>
-        <div class="media-object-section">
-            <h4>{{book.title}}</h4>
-            <p>{{book.description}}</p>
+        <div class="aa">
+            <h4>{{hero.name}}</h4>
+            <p>{{hero.realName}}</p>
+            <p>{{hero.description}}</p>
         </div>
     </div>
 </div>

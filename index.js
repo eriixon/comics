@@ -51,7 +51,7 @@ server.get('/books', function(req, res){
 })
 
 server.get('/fbheroes', function (req, res){
-    avengers.on("value", 
+    db.on("value", 
         function(snapshot) { res.send (snapshot.val())}, 
         function (errorObject) {console.log("The read failed: " + errorObject.code);}
     );
