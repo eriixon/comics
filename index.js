@@ -49,41 +49,6 @@ server.get('/heroes', function(req, res){
     getHero(hname, function(hero){
     res.send(hero);
 
-    /*retrecs.child(hname).set({
-        id: "some",
-        name: hname,
-        realName: "some",
-        description: "some",
-        img: "some",
-        physical: {
-            height: "some",
-            weight: "some",
-            eyes: "some",
-            hair: "some"
-        },
-        powers: "some",
-        abilities: "some",
-        groupAffiliations: ["some", "some"],
-        powergrid: {
-            intelligence: 7,
-            strength: 7,
-            speed: 7,
-            durability: 7,
-            energy: 7,
-            fighting: 7
-        },
-        weapons: "some",
-        wiki: {
-            comics: "some",
-            series: "some",
-            stories: "some",
-            events: "some",
-            detail: "some",
-            wiki: "some",
-            comiclink: "some"
-        },
-        });*/
-
    xmen.child(hero[0].name).set({
         id: hero[0].id,
         name: hero[0].name,
