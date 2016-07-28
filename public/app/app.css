@@ -39,4 +39,43 @@ body {
     height: 400px;
     width:  400px;
 }
+.arrow {
+  position: absolute;
+  top: 50%;
+  padding: 0;
+  line-height: 24px;
+  display: block;
+}
 
+/*.arrow:focus {
+  outline: none;
+}*/
+
+#triangle-left:hover{
+    border-right: 30px solid yellow;
+    cursor: pointer;
+}
+
+#triangle-right:hover{
+    border-left: 30px solid yellow;
+    cursor: pointer;
+}
+
+#triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-right: 30px solid red;
+	border-bottom: 15px solid transparent;
+    left: 7px;
+}
+
+
+#triangle-right {
+	width: 0;
+	height: 0;
+	border-top: 15px solid transparent;
+	border-left: 30px solid red;
+	border-bottom: 15px solid transparent;
+    right: 7px;
+}
