@@ -11,17 +11,32 @@ body {
 .top-bar {
     background-color: transparent;
 }
+
+.gallery {
+  width: 105%;
+  overflow: hidden;
+  margin-top: 50px;
+  margin-left: -30px;
+}
+.card-line {
+    list-style-type:none; 
+    width: 9999px;
+    margin: 0px;
+    padding: 0px;
+    transition: margin-left 250ms;
+}
+.hero-card {
+    width: 400px;
+    float: left;
+    border: 1px solid antiquewhite;
+    text-align: center;
+    margin: 10px 10px;
+}
+.card {
+    display: block;
+}
 .img-hero {
     height: 400px;
     width:  400px;
-    
 }
-.heroes-carusel {
-    position: relative;
-    
-}
-.hero-card {
-    width: 500px;
-    display: inline-block;
-    border: 1px solid antiquewhite;
-}
+

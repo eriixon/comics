@@ -1,14 +1,12 @@
-<div class="row small-up-1 medium-up-2 large-up-3">
-    <div class="column hero-card" ng-repeat="hero in $ctrl.heroes">
-        <div class="aa">
-            <div class="thumbnail">
-                <img class="img-hero" ng-src={{hero.img}}>
+<div class="row">
+
+    <ul class="card-line" >
+        <li class="hero-card" ng-repeat="hero in $ctrl.heroes">
+            <div class="card">
+                <img class="img-hero" ng-src={{hero.img}}
+                <br>
+                <h4>{{hero.name}}</h4>
             </div>
-        </div>
-        <div class="aa">
-            <h4>{{hero.name}}</h4>
-            <p>{{hero.realName}}</p>
-            <p>{{hero.description}}</p>
-        </div>
-    </div>
+        </li>
+    </ul>
 </div>
