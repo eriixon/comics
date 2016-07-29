@@ -20,7 +20,7 @@ body {
 }
 .card-line {
     list-style-type:none; 
-    width: 9999px;
+    width: 100%;
     margin: 0px;
     padding: 0px;
     transition: margin-left 250ms;

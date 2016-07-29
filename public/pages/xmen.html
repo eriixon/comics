@@ -1,12 +1,21 @@
 <div class="row">
 
-    <ul class="card-line" >
-        <li class="hero-card" ng-repeat="hero in $ctrl.heroes">
-            <div class="card">
-                <img class="img-hero" ng-src={{hero.img}}
-                <br>
-                <h4>{{hero.name}}</h4>
-            </div>
-        </li>
-    </ul>
+    <a ui-sref="xmen" style="float:left; margin-top:30%" onclick="galleryspin('-')">◀</a>
+    <a ui-sref="xmen" style="float:right; margin-top:30%" onclick="galleryspin('')">▶</a>
+
+    <div id="carousel">
+        <figure id="spinner" >
+          <img class="img-hero" ng-repeat="hero in $ctrl.heroes" ng-src={{hero.img}}
+        </figure>
+    </div>
+
 </div>
+
+<script type="text/javascript">
+        var angle = 0;
+        function galleryspin(sign) {
+            spinner = document.querySelector("#spinner");
+            if (!sign) { angle = angle + 45; } else { angle = angle - 45; }
+            spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+        }
+</script>
