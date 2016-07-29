@@ -1,17 +1,21 @@
-
-
 <div class="row">
-    <button class="arrow" id="triangle-left"></button>
-        <div class="gallery">
-            <ul class="card-line" >
-                <li class="hero-card" ng-repeat="hero in $ctrl.heroes">
-                    <div class="card">
-                        <img class="img-hero" ng-src={{hero.img}}
-                        <br>
-                        <h4>{{hero.name}}</h4>
-                    </div>
-                </li>
-             </ul>
-        </div>
-    <button class="arrow" id="triangle-right"></button>
+
+    <div id="carousel">
+        <figure id="spinner" >
+          <img ng-repeat="hero in $ctrl.heroes" ng-src={{hero.img}}
+        </figure>
+    </div>
+
+    <a style="float:left" onclick="galleryspin('-')">◀</a>
+    <a style="float:right" onclick="galleryspin('')">▶</a>
+
 </div>
+
+<script type="text/javascript">
+        var angle = 0;
+        function galleryspin(sign) {
+            spinner = document.querySelector("#spinner");
+            if (!sign) { angle = angle + 20; } else { angle = angle - 20; }
+            spinner.setAttribute("style","-webkit-transform: rotateY("+ angle +"deg); -moz-transform: rotateY("+ angle +"deg); transform: rotateY("+ angle +"deg);");
+        }
+</script>

@@ -1,11 +1,11 @@
 <div class="row">
 
-    <a ui-sref="xmen" style="float:left; margin-top:30%" onclick="galleryspin('-')">◀</a>
-    <a ui-sref="xmen" style="float:right; margin-top:30%" onclick="galleryspin('')">▶</a>
+    <a style="float:left; margin-top:30%" onclick="galleryspin('-')">◀</a>
+    <a style="float:right; margin-top:30%" onclick="galleryspin('')">▶</a>
 
     <div id="carousel">
         <figure id="spinner" >
-          <img class="img-hero" ng-repeat="hero in $ctrl.heroes" ng-src={{hero.img}}
+          <img ng-repeat="hero in $ctrl.heroes" ng-src={{hero.img}}
         </figure>
     </div>
 
