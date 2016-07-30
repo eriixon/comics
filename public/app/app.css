@@ -3,11 +3,10 @@ body {
     opacity: 0.8;
     color: aliceblue;
 }
-.orbit-image{
-    max-height: 90%;
-    z-index: -100;
-}
-
 .top-bar {
     background-color: transparent;
+}
+.orbit-image{
+    height: 91%;
+    z-index: -100;
 }
